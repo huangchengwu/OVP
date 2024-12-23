@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>视频解析</title>
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.26/vue.global.min.js"></script>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        input[type="text"], select {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        iframe {
+            margin-top: 20px;
+            width: 100%;
+            height: 327px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <h1>视频解析器</h1>
+        <select v-model="selectedService">
+            <option value="http://jiexi44.qmbo.cn/jiexi/?url=">备用通道3</option>
+            <option value="https://jx.xmflv.cc/?url=">备用通道4</option>
+
+            <option value="http://jiexi41.qmbo.cn/jiexi/?url=">优酷腾讯专用通道</option>
+            <option value="http://jiexi42.qmbo.cn/jiexi/?url=">电视剧解析（推荐）</option>
+            <option value="http://jiexi43.qmbo.cn/jiexi/?url=">备用通道1</option>
+            <option value="http://jiexi45.qmbo.cn/jiexi/?url=">备用通道2</option>
+
+      </select>
+        <input type="text" v-model="videoUrl" placeholder="输入视频链接">
+        <button @click="generateIframe">解析视频</button>
+        <div v-if="iframeSrc">
+            <iframe :src="iframeSrc" allowtransparency="true" scrolling="no" seamless allowfullscreen="true"></iframe>
+        </div>
+        <button @click="openLinkInNewWindow" style="margin-top: 20px;">在新窗口中打开链接</button>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    videoUrl: '',
+                    selectedService: 'http://jiexi44.qmbo.cn/jiexi/?url=',
+                    iframeSrc: ''
+                }
+            },
+            methods: {
+                generateIframe() {
+                    if (this.videoUrl.trim() !== '') {
+                        this.iframeSrc = `${this.selectedService}${encodeURIComponent(this.videoUrl)}`;
+                    } else {
+                        alert('请输入有效的视频链接');
+                    }
+                },
+                openLinkInNewWindow() {
+                    if (this.iframeSrc !== '') {
+                        window.open(this.iframeSrc, '_blank');
+                    } else {
+                        alert('请先解析一个视频链接');
+                    }
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
+
