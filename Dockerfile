@@ -10,4 +10,4 @@ RUN  echo "https://mirrors.aliyun.com/alpine/v3.14/main" > /etc/apk/repositories
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 
-CMD [ "/OVP/OVP/start.sh /OVP/OVP"]
+CMD [ "cd /OVP/OVP &&  sh start.sh "]
