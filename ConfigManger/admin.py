@@ -38,14 +38,14 @@ class TvAdmin(admin.ModelAdmin):
     )
     image_.allow_tags = True
     def Tun_(self, obj):
-        td="<td>"
+        td="<td><ul>"
         print("11",obj.name)
         for i in Server.objects.all():
-           td+="<a href=\"%s%s\" target=\"_blank\">%s</a>" %(i.url,obj.url,i.name+"-"+obj.name)
+           td+="<li><a href=\"%s%s\" target=\"_blank\">%s</a></li>" %(i.url,obj.url,i.name+"-"+obj.name)
 
 
         return format_html(
-            td+"</td>",
+            td+"</ul></td>",
         )
 
     Tun_.short_description = format_html(
