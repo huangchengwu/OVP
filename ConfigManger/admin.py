@@ -3,7 +3,7 @@ from .models import *
 from django.utils.html import format_html
 
 
-import yaml
+ 
 from django import forms
 
 # Register your models here.

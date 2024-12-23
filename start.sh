@@ -1,5 +1,6 @@
 #!/bin/bash
-Dir="/OVPs/"
+ 
+Dir="${1:-"/OVPs"}"
 
 if [ -d "/data/" ]; then
     echo "持久化启动"
