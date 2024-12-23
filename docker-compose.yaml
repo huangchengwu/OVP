@@ -1,0 +1,9 @@
+version: '3'
+services:
+  OVP-svc:
+    image: huangchengwu6904/hi-app:dws_cmdb-base
+    restart: always
+    ports:
+      - "9091:8000"
+    volumes:   
+      - ./data:/data 
