@@ -4,6 +4,6 @@ services:
     image: docker.io/huangchengwu6904/hi-app:OVP
     restart: always
     ports:
-      - "9091:8000"
+      - "9091:80"
     volumes:   
       - ./data:/data 

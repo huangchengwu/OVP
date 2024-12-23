@@ -1,5 +1,6 @@
 FROM  python:3.9.17-alpine3.18
 WORKDIR  /OVP
+RUN /OVN 
 ADD OVP.tar.gz OVP
 RUN ls -l  
 RUN  echo "https://mirrors.aliyun.com/alpine/v3.14/main" > /etc/apk/repositories && \
