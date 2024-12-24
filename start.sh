@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Dir="${1:-"/OVP/OVP"}"
+Dir="${1:-"/OVP"}"
 
 if [ -d "/data/" ]; then
     echo "持久化启动"
