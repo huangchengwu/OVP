@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 Dir="${1:-"/OVP"}"
 
