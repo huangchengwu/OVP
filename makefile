@@ -11,6 +11,6 @@ build:
 up:
 	python3.9 manage.py makemigrations 
 	python3.9 manage.py  migrate
-do:
+start:
 	docker-compose up -d 
 	
