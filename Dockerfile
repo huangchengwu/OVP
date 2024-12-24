@@ -10,7 +10,7 @@ RUN  echo "https://mirrors.aliyun.com/alpine/v3.14/main" > /etc/apk/repositories
     pip install -r /OVP/requirements.txt  -i https://mirrors.aliyun.com/pypi/simple/ 
 
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
-WORKDIR  /OVP
+ 
 
 
 CMD [ "sh /OVP/start.sh "]
