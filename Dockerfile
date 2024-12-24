@@ -13,4 +13,4 @@ ENTRYPOINT ["/usr/bin/dumb-init", "--"]
  
 
 
-CMD [ "sh /OVP/start.sh "]
+CMD [ "/bin/sh","-c","/OVP/start.sh "]
