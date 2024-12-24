@@ -5,6 +5,8 @@ run:
 build:
 	echo "build"
 	rm -rf OVP.tar.gz
+	ls -l OVP.tar.gz
+	sleep 1
 	tar cvf OVP.tar.gz .
 	sudo docker build -t huangchengwu6904/hi-app:OVP . 
 
