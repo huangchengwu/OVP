@@ -13,4 +13,5 @@ up:
 	python3.9 manage.py  migrate
 start:
 	docker-compose up -d 
-	
+
+
